@@ -1,0 +1,1 @@
+export {default as bgImg} from "./Rectangle2.png";
