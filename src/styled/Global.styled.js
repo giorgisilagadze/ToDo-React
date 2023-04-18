@@ -12,6 +12,6 @@ export const GlobalStyled = createGlobalStyle`
         width: 100vw;
         height: 100vh;
         background-color: #eeeeee;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 `

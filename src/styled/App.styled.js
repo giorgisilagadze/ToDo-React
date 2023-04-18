@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const StyledApp = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    gap: 296px;
+    padding: 162px 320px;
     height: 100vh;
+    max-width: 2000px;
+    margin: auto;
 `
