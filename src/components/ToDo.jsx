@@ -73,7 +73,7 @@ export default function ToDo() {
         </Button>
       </MainDiv>
       <TodosDiv>
-        {newToDo.map((item, index) => (
+        {newToDo?.map((item, index) => (
           <NewToDo
             title={item.name}
             index={index}
