@@ -28,21 +28,31 @@ export default function ToDo() {
     setTodoValue(event.target.value);
   };
 
+  let isChecked;
+
   const addTodo = () => {
     if (todoValue != "") {
-      setNewToDo([...newToDo, { name: todoValue }]);
+      setNewToDo([
+        ...newToDo,
+        { name: todoValue, time: currentTime, isChescked: false },
+      ]);
       setTodoValue("");
-      window.localStorage.setItem(
-        "result",
-        JSON.stringify([...newToDo, todoValue])
-      );
     }
   };
 
   useEffect(() => {
+    if (newToDo.length != 0) {
+      window.localStorage.setItem("result", JSON.stringify(newToDo));
+    }
+    console.log(5 + 5);
+  }, [newToDo]);
+
+  useEffect(() => {
     setNewToDo(JSON.parse(window.localStorage.getItem("result")));
+    console.log(3 + 5);
   }, []);
 
+  console.log(newToDo);
   return (
     <Container>
       <DateDay>{currentDate}</DateDay>
@@ -65,11 +75,11 @@ export default function ToDo() {
       <TodosDiv>
         {newToDo.map((item, index) => (
           <NewToDo
-            title={item}
+            title={item.name}
             index={index}
             setNewToDo={setNewToDo}
             newToDo={newToDo}
-            time={currentTime}
+            time={item.time}
           />
         ))}
       </TodosDiv>

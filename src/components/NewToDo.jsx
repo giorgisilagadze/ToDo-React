@@ -8,18 +8,15 @@ import {
   Remove,
 } from "../styled/NewToDo.styled";
 
-// const deleteById = (id) => {
-//   setNewToDo((oldValues) => {
-//     return oldValues.filter((item) => item.id !== id);
-//   });
-// };
-
 export default function NewToDo({ title, time, index, setNewToDo, newToDo }) {
   const removeTodo = () => {
     setNewToDo(newToDo.filter((todo, i) => i !== index));
+    localStorage.setItem(
+      "result",
+      JSON.stringify(newToDo.filter((todo, i) => i !== index))
+    );
   };
 
-  const [checked, setChecked] = useState(false);
   return (
     <ParentDiv>
       <div>
@@ -28,8 +25,16 @@ export default function NewToDo({ title, time, index, setNewToDo, newToDo }) {
       </div>
       <ChildDiv>
         <CheckV2
-          bg={checked ? "#20EEB0" : "white"}
-          onClick={() => setChecked(!checked)}
+          bg={newToDo[index].isChecked ? "#20EEB0" : "white"}
+          onClick={() => {
+            newToDo.map((todo, i) => {
+              const clone = newToDo;
+              if (i === index) {
+                clone[i].isChecked = !clone[i].isChecked;
+              }
+              setNewToDo([...clone]);
+            });
+          }}
         >
           <img src="./images/Vector.png" alt="check" />
         </CheckV2>

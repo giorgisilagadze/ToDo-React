@@ -88,7 +88,7 @@ export const Button = styled.button`
 `
 
 export const TodosDiv = styled.div`
-    height: 260px;
+    height: 265px;
     overflow-x: hidden;
 
     &::-webkit-scrollbar {
