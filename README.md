@@ -16,7 +16,7 @@ Your users should be able to:
 
 ### Screenshot
 
-![](./Todoreact.png)
+![](./images/Todoreact.png)
 
 ### Built with
 
