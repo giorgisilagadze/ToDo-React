@@ -41,7 +41,7 @@ export default function ToDo() {
   };
 
   useEffect(() => {
-    if (newToDo.length != 0) {
+    if (newToDo?.length != 0) {
       window.localStorage.setItem("result", JSON.stringify(newToDo));
     }
     console.log(5 + 5);
