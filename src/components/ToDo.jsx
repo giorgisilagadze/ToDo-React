@@ -32,10 +32,9 @@ export default function ToDo() {
 
   const addTodo = () => {
     if (todoValue != "") {
-      setNewToDo([
-        ...newToDo,
-        { name: todoValue, time: currentTime, isChescked: false },
-      ]);
+      const clone = newToDo;
+      clone.push({ name: todoValue, time: currentTime, isChescked: false });
+      setNewToDo([...clone]);
       setTodoValue("");
     }
   };
