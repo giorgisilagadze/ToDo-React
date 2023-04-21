@@ -32,9 +32,9 @@ export default function ToDo() {
 
   const addTodo = () => {
     if (todoValue != "") {
-      const clone = newToDo;
+      const clone = [...newToDo];
       clone?.push({ name: todoValue, time: currentTime, isChescked: false });
-      setNewToDo([...clone]);
+      setNewToDo(clone);
       setTodoValue("");
     }
   };
@@ -47,7 +47,11 @@ export default function ToDo() {
   }, [newToDo]);
 
   useEffect(() => {
-    setNewToDo(JSON.parse(window.localStorage.getItem("result")));
+    const storedToDos = JSON.parse(window.localStorage.getItem("result"));
+    if (storedToDos) {
+      setNewToDo(storedToDos);
+    }
+
     console.log(3 + 5);
   }, []);
 

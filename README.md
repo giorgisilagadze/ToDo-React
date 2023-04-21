@@ -29,3 +29,8 @@ Your users should be able to:
 ### What I learned
 
 I've learned how to create components in React and style them with styled-components as well. Also, I had the first contact with local storage.
+
+## Links
+
+- Solution URL: https://github.com/giorgisilagadze/ToDo-React;
+- Live Site URL: https://to-do-delta-nine.vercel.app;
