@@ -33,4 +33,4 @@ I've learned how to create components in React and style them with styled-compon
 ## Links
 
 - Solution URL: https://github.com/giorgisilagadze/ToDo-React;
-- Live Site URL: https://to-do-delta-nine.vercel.app;
+- Live Site URL: https://to-do-react-ruddy.vercel.app;
